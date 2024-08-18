@@ -6,10 +6,10 @@ const {
   createUser,
   getOneUser,
   updateUser,
-  deleteUser
+  deleteUser,
+  creeUser,
 } = require("../controllers/user");
-
-router.post("/user", createUser);
+router.post("/user", creeUser);
 router.get("/user", afficherUser);
 router.get("/user/:idUser", getOneUser);
 router.put("/user/:idUser", updateUser);

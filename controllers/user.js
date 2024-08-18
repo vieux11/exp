@@ -1,13 +1,19 @@
 const User = require("../models/user");
+exports.creeUser=(req, res)=>{
+  const user1 = new User({
+    nom: "nqnqq",
+    prenom: "kundji",
+  });
+  console.log(user1);
+  
+user1.save()
+.then((d)=>res.json(d)
+)
+}
 exports.createUser = async (req, res, next) => {
   const { nomBody, prenomBody } = req.body;
   try {
-    // const user = new User({
-    //   nom: nomBody,
-    //   prenom: prenomBody,
-    // });
-    // const newUser = await user.save();
-    const user = await User.create({
+      const user = await User.create({
       nom: nomBody,
       prenom: prenomBody,
     });
